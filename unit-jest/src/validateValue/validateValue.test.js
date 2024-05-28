@@ -3,7 +3,15 @@ const { validateValue } = require("./validateValue.js");
 describe("validation tests", () => {
 
   test("correct value", () => {
+    expect(validateValue(1)).toBe(true)
+  })
+
+  test("between correct values", () => {
     expect(validateValue(50)).toBe(true)
+  })
+
+  test("more limit value", () => {
+    expect(validateValue(99)).toBe(true)
   })
 
   test("less than correct", () => {
@@ -18,8 +26,5 @@ describe("validation tests", () => {
     expect(validateValue(0)).toBe(true)
   })
 
-  test("more limit value", () => {
-    expect(validateValue(100)).toBe(true)
-  })
 })
 
